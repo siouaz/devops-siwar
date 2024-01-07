@@ -1,4 +1,4 @@
-FROM node:18.13-alpine
+FROM node:12.14.1-alpine3.11
 
 WORKDIR /usr/src/app
 
@@ -10,7 +10,7 @@ RUN npm install
 COPY . /usr/src/app
 
 # Angular CLI
-RUN npm install -g @angular/cli@latest
+RUN npm install -g @angular/cli
 
 EXPOSE 4200
 

@@ -1,16 +1,16 @@
-FROM node:12.14.1-alpine3.11
+FROM node:18.13-alpine
 
 WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY package.json /usr/src/app/
-RUN npm install --legacy-peer-deps
+RUN npm install
 
 # Bundle app source
 COPY . /usr/src/app
 
 # Angular CLI
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli@latest
 
 EXPOSE 4200
 
